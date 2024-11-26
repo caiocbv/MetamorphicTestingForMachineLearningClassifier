@@ -40,12 +40,16 @@ public class WekaMultiLayerPerceptron {
         }
     }
 
-    public Double build() {
+    public Double build(int nFile) {
         try {
 
 
             CSVLoader loader = new CSVLoader();
-            loader.setSource(new File(OJOSECO_FILEPATH));
+            if(nFile == 0) {
+                loader.setSource(new File(OJOSECO_FILEPATH));
+            }else {
+                loader.setSource(new File(OJOSECO_FILEPATH));
+            }
 
 
 
