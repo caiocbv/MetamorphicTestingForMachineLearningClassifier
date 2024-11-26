@@ -46,20 +46,18 @@ public class WekaMultiLayerPerceptron {
 
             CSVLoader loader = new CSVLoader();
             if(nFile == 10) {
-                loader.setSource(new File("./dataset/AllTags.csv"));
+                loader.setSource(new File("./dataset/noised_10_percent.csv"));
             }if(nFile == 20) {
-                loader.setSource(new File("./dataset/AllTags.csv"));
+                loader.setSource(new File("./dataset/noised_20_percent.csv"));
             }if(nFile == 30) {
-                loader.setSource(new File("./dataset/AllTags.csv"));
+                loader.setSource(new File("./dataset/noised_30_percent.csv"));
             }if(nFile == 40) {
-                loader.setSource(new File("./dataset/AllTags.csv"));
+                loader.setSource(new File("./dataset/noised_40_percent.csv"));
             }if(nFile == 60) {
-                loader.setSource(new File("./dataset/AllTags.csv"));
-            }else {
+                loader.setSource(new File("./dataset/noised_60_percent.csv"));
+            }if(nFile == 0) {
                 loader.setSource(new File(OJOSECO_FILEPATH));
             }
-
-
 
             Instances data = loader.getDataSet();
 
