@@ -43,41 +43,68 @@ public class WekaMultiLayerPerceptron {
     public Double build(int nFile) {
         try {
 
-
             CSVLoader loader = new CSVLoader();
-            if(nFile == 10) {
-                loader.setSource(new File("./dataset/noised_10_percent.csv"));
+            loader.setSource(new File(OJOSECO_FILEPATH));
+
+            CSVLoader loaderTraining = new CSVLoader();
+
+            if(nFile == 5) {
+                loaderTraining.setSource(new File("./dataset/noised_5_percent.csv"));
+            }if(nFile == 6) {
+                loaderTraining.setSource(new File("./dataset/noised_6_percent.csv"));
+            }if(nFile == 7) {
+                loaderTraining.setSource(new File("./dataset/noised_7_percent.csv"));
+            }if(nFile == 10) {
+                loaderTraining.setSource(new File("./dataset/noised_10_percent.csv"));
             }if(nFile == 20) {
-                loader.setSource(new File("./dataset/noised_20_percent.csv"));
+                loaderTraining.setSource(new File("./dataset/noised_20_percent.csv"));
             }if(nFile == 30) {
-                loader.setSource(new File("./dataset/noised_30_percent.csv"));
+                loaderTraining.setSource(new File("./dataset/noised_30_percent.csv"));
             }if(nFile == 40) {
-                loader.setSource(new File("./dataset/noised_40_percent.csv"));
+                loaderTraining.setSource(new File("./dataset/noised_40_percent.csv"));
             }if(nFile == 60) {
-                loader.setSource(new File("./dataset/noised_60_percent.csv"));
+                loaderTraining.setSource(new File("./dataset/noised_60_percent.csv"));
             }if(nFile == 0) {
-                loader.setSource(new File(OJOSECO_FILEPATH));
+                loaderTraining.setSource(new File(OJOSECO_FILEPATH));
             }
 
             Instances data = loader.getDataSet();
+            Instances dataTest = loaderTraining.getDataSet();
 
             Normalize normalize = new Normalize();
             normalize.setInputFormat(data);
+
+            Normalize normalizeTraining = new Normalize();
+            normalizeTraining.setInputFormat(dataTest);
+
             data = Filter.useFilter(data, normalize);
+            dataTest = Filter.useFilter(dataTest, normalize);
 
-            data.setClassIndex(data.numAttributes() - 1); //Setado a posição da Classe
+            data.setClassIndex(data.numAttributes() - 1); //Setado a posição da Classe (ultima posicao)
+            dataTest.setClassIndex(dataTest.numAttributes() - 1);
 
+
+            System.out.println("===========================");
+            System.out.println("===========================");
+
+
+            System.out.println("DATA");
             System.out.println(data.toSummaryString());
+            System.out.println("DATA TEST");
+            System.out.println(dataTest.toSummaryString());
+
+            System.out.println("===========================");
+            System.out.println("===========================");
 
 
-
+            //Metodo Random
             data.randomize(new Random(0));
-
+            //Setando o local para "cisao" e teste
             int trainSize = Math.toIntExact(Math.round(data.numInstances() * RATIO_TEST));
             int testSize = data.numInstances() - trainSize;
 
             Instances train = new Instances(data, 0, trainSize);
-            Instances test = new Instances(data, trainSize, testSize);
+            Instances test = new Instances(dataTest, trainSize, testSize);
 
             MultilayerPerceptron mlp = new MultilayerPerceptron();
             mlp.setOptions(Utils.splitOptions("-L 0.3 -M 0.2 -N 500 -V 0 -S 0 -E 20 -H a"));

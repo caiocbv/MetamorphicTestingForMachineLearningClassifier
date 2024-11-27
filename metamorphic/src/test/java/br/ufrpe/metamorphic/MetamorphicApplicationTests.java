@@ -16,6 +16,33 @@ class MetamorphicApplicationTests {
 	}
 
 	@Test
+	void context5() {
+
+		WekaMultiLayerPerceptron mlp = new WekaMultiLayerPerceptron();
+		Double buildResponse = mlp.build(5);
+		System.out.println(buildResponse);
+		assertTrue(buildResponse > 0.90);
+	}
+
+	@Test
+	void context6() {
+
+		WekaMultiLayerPerceptron mlp = new WekaMultiLayerPerceptron();
+		Double buildResponse = mlp.build(6);
+		System.out.println(buildResponse);
+		assertTrue(buildResponse > 0.90);
+	}
+
+	@Test
+	void context7() {
+
+		WekaMultiLayerPerceptron mlp = new WekaMultiLayerPerceptron();
+		Double buildResponse = mlp.build(7);
+		System.out.println(buildResponse);
+		assertTrue(buildResponse > 0.90);
+	}
+
+	@Test
 	void context10() {
 
 		WekaMultiLayerPerceptron mlp = new WekaMultiLayerPerceptron();
