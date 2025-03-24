@@ -40,7 +40,7 @@ public class WekaMultiLayerPerceptron {
         }
     }
 
-    public Double build(int nFile) {
+    public Double build(Double nFile) {
         try {
 
             CSVLoader loader = new CSVLoader();
@@ -48,23 +48,199 @@ public class WekaMultiLayerPerceptron {
 
             CSVLoader loaderTraining = new CSVLoader();
 
-            if(nFile == 5) {
-                loaderTraining.setSource(new File("./dataset/noised_5_percent.csv"));
-            }if(nFile == 6) {
-                loaderTraining.setSource(new File("./dataset/noised_6_percent.csv"));
-            }if(nFile == 7) {
-                loaderTraining.setSource(new File("./dataset/noised_7_percent.csv"));
-            }if(nFile == 10) {
-                loaderTraining.setSource(new File("./dataset/noised_10_percent.csv"));
-            }if(nFile == 20) {
-                loaderTraining.setSource(new File("./dataset/noised_20_percent.csv"));
-            }if(nFile == 30) {
-                loaderTraining.setSource(new File("./dataset/noised_30_percent.csv"));
-            }if(nFile == 40) {
-                loaderTraining.setSource(new File("./dataset/noised_40_percent.csv"));
-            }if(nFile == 60) {
-                loaderTraining.setSource(new File("./dataset/noised_60_percent.csv"));
-            }if(nFile == 0) {
+            if(nFile == 1.5625) {
+                loaderTraining.setSource(new File("./dataset/noised_1.5625_percent.csv"));
+            }
+            if(nFile == 3.125) {
+                loaderTraining.setSource(new File("./dataset/noised_3.125_percent.csv"));
+            }
+            if(nFile == 4.6875) {
+                loaderTraining.setSource(new File("./dataset/noised_4.6875_percent.csv"));
+            }
+            if(nFile == 6.25) {
+                loaderTraining.setSource(new File("./dataset/noised_6.25_percent.csv"));
+            }
+            if(nFile == 7.8125) {
+                loaderTraining.setSource(new File("./dataset/noised_7.8125_percent.csv"));
+            }
+            if(nFile == 9.375) {
+                loaderTraining.setSource(new File("./dataset/noised_9.375_percent.csv"));
+            }
+            if(nFile == 10.9375) {
+                loaderTraining.setSource(new File("./dataset/noised_10.9375_percent.csv"));
+            }
+            if(nFile == 12.5) {
+                loaderTraining.setSource(new File("./dataset/noised_12.5_percent.csv"));
+            }
+            if(nFile == 14.0625) {
+                loaderTraining.setSource(new File("./dataset/noised_14.0625_percent.csv"));
+            }
+            if(nFile == 15.625) {
+                loaderTraining.setSource(new File("./dataset/noised_15.625_percent.csv"));
+            }
+            if(nFile == 17.1875) {
+                loaderTraining.setSource(new File("./dataset/noised_17.1875_percent.csv"));
+            }
+            if(nFile == 18.75) {
+                loaderTraining.setSource(new File("./dataset/noised_18.75_percent.csv"));
+            }
+            if(nFile == 20.3125) {
+                loaderTraining.setSource(new File("./dataset/noised_20.3125_percent.csv"));
+            }
+            if(nFile == 21.875) {
+                loaderTraining.setSource(new File("./dataset/noised_21.875_percent.csv"));
+            }
+            if(nFile == 23.4375) {
+                loaderTraining.setSource(new File("./dataset/noised_23.4375_percent.csv"));
+            }
+            if(nFile == 25) {
+                loaderTraining.setSource(new File("./dataset/noised_25_percent.csv"));
+            }
+            if(nFile == 26.5625) {
+                loaderTraining.setSource(new File("./dataset/noised_26.5625_percent.csv"));
+            }
+            if(nFile == 28.125) {
+                loaderTraining.setSource(new File("./dataset/noised_28.125_percent.csv"));
+            }
+            if(nFile == 29.6875) {
+                loaderTraining.setSource(new File("./dataset/noised_29.6875_percent.csv"));
+            }
+            if(nFile == 31.25) {
+                loaderTraining.setSource(new File("./dataset/noised_31.25_percent.csv"));
+            }
+            if(nFile == 32.8125) {
+                loaderTraining.setSource(new File("./dataset/noised_32.8125_percent.csv"));
+            }
+            if(nFile == 34.375) {
+                loaderTraining.setSource(new File("./dataset/noised_34.375_percent.csv"));
+            }
+            if(nFile == 35.9375) {
+                loaderTraining.setSource(new File("./dataset/noised_35.9375_percent.csv"));
+            }
+            if(nFile == 37.5) {
+                loaderTraining.setSource(new File("./dataset/noised_37.5_percent.csv"));
+            }
+            if(nFile == 39.0625) {
+                loaderTraining.setSource(new File("./dataset/noised_39.0625_percent.csv"));
+            }
+            if(nFile == 40.625) {
+                loaderTraining.setSource(new File("./dataset/noised_40.625_percent.csv"));
+            }
+            if(nFile == 42.1875) {
+                loaderTraining.setSource(new File("./dataset/noised_42.1875_percent.csv"));
+            }
+            if(nFile == 43.75) {
+                loaderTraining.setSource(new File("./dataset/noised_43.75_percent.csv"));
+            }
+            if(nFile == 45.3125) {
+                loaderTraining.setSource(new File("./dataset/noised_45.3125_percent.csv"));
+            }
+            if(nFile == 46.875) {
+                loaderTraining.setSource(new File("./dataset/noised_46.875_percent.csv"));
+            }
+            if(nFile == 48.4375) {
+                loaderTraining.setSource(new File("./dataset/noised_48.4375_percent.csv"));
+            }
+            if(nFile == 50) {
+                loaderTraining.setSource(new File("./dataset/noised_50_percent.csv"));
+            }
+            if(nFile == 51.5625) {
+                loaderTraining.setSource(new File("./dataset/noised_51.5625_percent.csv"));
+            }
+            if(nFile == 53.125) {
+                loaderTraining.setSource(new File("./dataset/noised_53.125_percent.csv"));
+            }
+            if(nFile == 54.6875) {
+                loaderTraining.setSource(new File("./dataset/noised_54.6875_percent.csv"));
+            }
+            if(nFile == 56.25) {
+                loaderTraining.setSource(new File("./dataset/noised_56.25_percent.csv"));
+            }
+            if(nFile == 57.8125) {
+                loaderTraining.setSource(new File("./dataset/noised_57.8125_percent.csv"));
+            }
+            if(nFile == 59.375) {
+                loaderTraining.setSource(new File("./dataset/noised_59.375_percent.csv"));
+            }
+            if(nFile == 60.9375) {
+                loaderTraining.setSource(new File("./dataset/noised_60.9375_percent.csv"));
+            }
+            if(nFile == 62.5) {
+                loaderTraining.setSource(new File("./dataset/noised_62.5_percent.csv"));
+            }
+            if(nFile == 64.0625) {
+                loaderTraining.setSource(new File("./dataset/noised_64.0625_percent.csv"));
+            }
+            if(nFile == 65.625) {
+                loaderTraining.setSource(new File("./dataset/noised_65.625_percent.csv"));
+            }
+            if(nFile == 67.1875) {
+                loaderTraining.setSource(new File("./dataset/noised_67.1875_percent.csv"));
+            }
+            if(nFile == 68.75) {
+                loaderTraining.setSource(new File("./dataset/noised_68.75_percent.csv"));
+            }
+            if(nFile == 70.3125) {
+                loaderTraining.setSource(new File("./dataset/noised_70.3125_percent.csv"));
+            }
+            if(nFile == 71.875) {
+                loaderTraining.setSource(new File("./dataset/noised_71.875_percent.csv"));
+            }
+            if(nFile == 73.4375) {
+                loaderTraining.setSource(new File("./dataset/noised_73.4375_percent.csv"));
+            }
+            if(nFile == 75) {
+                loaderTraining.setSource(new File("./dataset/noised_75_percent.csv"));
+            }
+            if(nFile == 76.5625) {
+                loaderTraining.setSource(new File("./dataset/noised_76.5625_percent.csv"));
+            }
+            if(nFile == 78.125) {
+                loaderTraining.setSource(new File("./dataset/noised_78.125_percent.csv"));
+            }
+            if(nFile == 79.6875) {
+                loaderTraining.setSource(new File("./dataset/noised_79.6875_percent.csv"));
+            }
+            if(nFile == 81.25) {
+                loaderTraining.setSource(new File("./dataset/noised_81.25_percent.csv"));
+            }
+            if(nFile == 82.8125) {
+                loaderTraining.setSource(new File("./dataset/noised_82.8125_percent.csv"));
+            }
+            if(nFile == 84.375) {
+                loaderTraining.setSource(new File("./dataset/noised_84.375_percent.csv"));
+            }
+            if(nFile == 85.9375) {
+                loaderTraining.setSource(new File("./dataset/noised_85.9375_percent.csv"));
+            }
+            if(nFile == 87.5) {
+                loaderTraining.setSource(new File("./dataset/noised_87.5_percent.csv"));
+            }
+            if(nFile == 89.0625) {
+                loaderTraining.setSource(new File("./dataset/noised_89.0625_percent.csv"));
+            }
+            if(nFile == 90.625) {
+                loaderTraining.setSource(new File("./dataset/noised_90.625_percent.csv"));
+            }
+            if(nFile == 92.1875) {
+                loaderTraining.setSource(new File("./dataset/noised_92.1875_percent.csv"));
+            }
+            if(nFile == 93.75) {
+                loaderTraining.setSource(new File("./dataset/noised_93.75_percent.csv"));
+            }
+            if(nFile == 95.3125) {
+                loaderTraining.setSource(new File("./dataset/noised_95.3125_percent.csv"));
+            }
+            if(nFile == 96.875) {
+                loaderTraining.setSource(new File("./dataset/noised_96.875_percent.csv"));
+            }
+            if(nFile == 98.4375) {
+                loaderTraining.setSource(new File("./dataset/noised_98.4375_percent.csv"));
+            }
+            if(nFile == 100) {
+                loaderTraining.setSource(new File("./dataset/noised_100_percent.csv"));
+            }
+            if(nFile == 0) {
                 loaderTraining.setSource(new File(OJOSECO_FILEPATH));
             }
 
