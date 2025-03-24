@@ -6,9 +6,12 @@ import pandas as pd
 import sweetviz as sv
 from ydata_profiling import ProfileReport, profile_report
 import random
+from pathlib import Path
+
+root_dir = Path(__file__).resolve().parent
 
 #THESE ARE ALL CSV FILES FROM ALL TAGS Mifare and Fakes
-df = pd.read_csv('AllTags_Median_Noise_20_percent.csv')
+df = pd.read_csv(root_dir / "dataset" / "AllTags.csv")
 
 dataf = pd.DataFrame(df).copy()
 print(dataf)
@@ -21,16 +24,17 @@ print(dataf)
 #dataf_size = dataf.size
 
 # Set the percentage of pixels that should contain noise
-noise_percentage = 0.1  # Setting to 10%
+noise_percentage = 10  # Setting to 10%
 
 # Determine the size of the noise based on the noise percentage
-noise_size = int(noise_percentage*64) #64 columns
+noise_size = int(noise_percentage*0.64) #64 columns divided by 100 to get percentage
 print("NOISE_SIZE")
 print(noise_size)
 
 
 df_noised = dataf.copy()
 for i in range(0,len(dataf)):
+    print(i)
     # Randomly select indices for adding noise.
     random_indices = random.sample(range(1, 64), noise_size)
     print("RANDOM INDICES")
@@ -52,4 +56,5 @@ for i in range(0,len(dataf)):
 
 
 
-df_noised.to_csv("noised_10_percent.csv",index=False)
+
+df_noised.to_csv((root_dir / "dataset" / "DataNoised" / str("noised_"+str(noise_percentage)+"_percent.csv")),index=False)
